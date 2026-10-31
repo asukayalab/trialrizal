@@ -24,7 +24,7 @@ else :
       <ul class="rm-professions"><?php foreach (['rm_profession_1','rm_profession_2','rm_profession_3'] as $key): if ($field($key) !== ''): ?><li><?php echo esc_html($field($key)); ?></li><?php endif; endforeach; ?></ul>
       <div class="rm-actions"><div class="rm-wa"><?php if ($wa !== ''): ?><a class="rm-button" href="<?php echo esc_url($wa, ['https']); ?>" target="_blank" rel="noopener noreferrer">WhatsApp</a><?php endif; ?></div></div>
     </div>
-    <a class="rm-scroll" href="#coming-soon" aria-label="Scroll to next section"><span></span></a>
+    <a class="rm-scroll" href="#coming-soon" aria-label="Scroll to next section">↓</a>
   </section>
   <section id="coming-soon" class="rm-second">
     <div class="rm-dots rm-dots-second" aria-hidden="true"><i></i><i></i></div>

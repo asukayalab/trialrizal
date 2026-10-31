@@ -27,11 +27,11 @@ Untuk beranda, manusia memilih Page tersebut sebagai static homepage di WordPres
 
 ## Font dan motion
 
-Roboto dimuat dari Google Fonts; jika tidak tersedia, browser memakai sans-serif fallback dan tampilan dapat berbeda. Ini memerlukan akses jaringan dari browser dan pemeriksaan privasi/lisensi sebelum distribusi. Builder proyek alpha.19 tidak memaketkan file font atau JS mandiri; motion didaftarkan sebagai inline script melalui WordPress dari file PHP yang terdaftar dalam runtime. Preferensi reduced motion menghentikan animasi. Indikator memakai varian garis; konfigurasi indikator aktual pada file referensi yang dibungkus belum diverifikasi secara visual.
+Roboto dimuat dari Google Fonts; jika tidak tersedia, browser memakai sans-serif fallback dan tampilan dapat berbeda. Ini memerlukan akses jaringan dari browser dan pemeriksaan privasi/lisensi sebelum distribusi. Builder proyek alpha.19 tidak memaketkan file font atau JS mandiri; motion didaftarkan sebagai inline script melalui WordPress dari file PHP yang terdaftar dalam runtime. Preferensi reduced motion menghentikan animasi. Indikator memakai panah seperti yang terlihat pada referensi browser.
 
 ## Build dan distribusi
 
-Gunakan builder Falcon yang cocok dengan source ini, dengan output di luar source. `project.json` menggunakan project ID dan theme slug `trialrizal`, versi `0.1.0-alpha.1`, parent `falcon-theme`, dan batas kompatibilitas konservatif sesuai baseline. Setelah source di-commit dan bersih, build manifest/ZIP, periksa isi dan unggah keduanya ke GitHub Release dengan tag yang cocok (`v0.1.0-alpha.1`). Falcon memerlukan manifest dari source bersih untuk instalasi remote. Build dari checkout tanpa commit hanyalah pemeriksaan lokal. Publish/upload, instalasi, aktivasi theme, dan perubahan homepage membutuhkan instruksi terpisah.
+Gunakan builder Falcon yang cocok dengan source ini, dengan output di luar source. `project.json` menggunakan project ID dan theme slug `trialrizal`, versi `0.1.0-alpha.2`, parent `falcon-theme`, dan batas kompatibilitas konservatif sesuai baseline. Setelah source di-commit dan bersih, build manifest/ZIP, periksa isi dan unggah keduanya ke GitHub Release dengan tag yang cocok (`v0.1.0-alpha.2`). Falcon memerlukan manifest dari source bersih untuk instalasi remote. Build dari checkout tanpa commit hanyalah pemeriksaan lokal. Publish/upload, instalasi, aktivasi theme, dan perubahan homepage membutuhkan instruksi terpisah.
 
 ## Pemeriksaan yang masih diperlukan
 

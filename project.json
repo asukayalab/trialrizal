@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project_id": "trialrizal",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "status": "development",
   "package": {"id": "trialrizal", "type": "theme", "parent": "falcon-theme"},
   "min_wp": "6.7",
@@ -10,5 +10,5 @@
     "falcon-theme": {"min": "0.1.0-alpha.6", "max_exclusive": "0.2.0"},
     "falcon-wf": {"min": "0.1.0-alpha.19", "max_exclusive": "0.2.0", "optional": false}
   },
-  "runtime": ["style.css", "functions.php", "front-page.php", "page-maintenance.php", "header-maintenance.php", "footer-maintenance.php", "assets/maintenance.css", "assets/motion.php"]
+  "runtime": ["style.css", "index.php", "functions.php", "front-page.php", "page-maintenance.php", "header-maintenance.php", "footer-maintenance.php", "assets/maintenance.css", "assets/motion.php"]
 }
