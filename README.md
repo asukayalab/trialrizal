@@ -8,6 +8,7 @@ Di Falcon Content Builder, buat field group untuk **Page**. Buat field berikut s
 
 | Key | Jenis | Isi referensi awal untuk trial |
 |---|---|---|
+| `rm_hero_title` | text | Rizal Maulana |
 | `rm_brand_suffix` | text | Engineering |
 | `rm_tagline` | text | Precision in Every Structure |
 | `rm_profession_1` | text | Structural Engineer |
@@ -21,7 +22,7 @@ Di Falcon Content Builder, buat field group untuk **Page**. Buat field berikut s
 | `rm_footer` | text | © 2025 Rizal Maulana Engineering |
 | `rm_domain` | text | rizalmaulana.id |
 
-Set judul Page ke `Rizal Maulana` dan pilih named template **Rizal Maintenance**. Data pada tabel merupakan isi referensi yang perlu ditinjau pemilik; bukan otomatis dibuat atau diverifikasi. Falcon memakai classic editor untuk tipe yang memiliki field Falcon. Bila field belum dibuat/diisi, bagian terkait kosong. Email tidak memiliki field atau tombol pada versi ini.
+Judul Page dapat tetap `maintenance`, sedangkan teks hero diisi terpisah melalui `rm_hero_title`. Jika field hero belum ada atau kosong, judul Page dipakai sebagai fallback. Pilih named template **Rizal Maintenance**. Data pada tabel merupakan isi referensi yang perlu ditinjau pemilik; bukan otomatis dibuat atau diverifikasi. Falcon memakai classic editor untuk tipe yang memiliki field Falcon. Bila field belum dibuat/diisi, bagian terkait kosong. Email tidak memiliki field atau tombol pada versi ini.
 
 Untuk beranda, manusia memilih Page tersebut sebagai static homepage di WordPress dan memilih template yang sama. Child `front-page.php` menangani assignment itu; untuk pilihan lain ia meneruskan ke parent Falcon Theme. Review perubahan homepage dan theme di staging terlebih dahulu. Template meminta noindex melalui `wp_robots`.
 
@@ -31,7 +32,7 @@ Roboto dimuat dari Google Fonts; jika tidak tersedia, browser memakai sans-serif
 
 ## Build dan distribusi
 
-Gunakan builder Falcon yang cocok dengan source ini, dengan output di luar source. `project.json` menggunakan project ID dan theme slug `trialrizal`, versi `0.1.0-alpha.2`, parent `falcon-theme`, dan batas kompatibilitas konservatif sesuai baseline. Setelah source di-commit dan bersih, build manifest/ZIP, periksa isi dan unggah keduanya ke GitHub Release dengan tag yang cocok (`v0.1.0-alpha.2`). Falcon memerlukan manifest dari source bersih untuk instalasi remote. Build dari checkout tanpa commit hanyalah pemeriksaan lokal. Publish/upload, instalasi, aktivasi theme, dan perubahan homepage membutuhkan instruksi terpisah.
+Gunakan builder Falcon yang cocok dengan source ini, dengan output di luar source. `project.json` menggunakan project ID dan theme slug `trialrizal`, versi `0.1.0-alpha.3`, parent `falcon-theme`, dan batas kompatibilitas konservatif sesuai baseline. Setelah source di-commit dan bersih, build manifest/ZIP, periksa isi dan unggah keduanya ke GitHub Release dengan tag yang cocok (`v0.1.0-alpha.3`). Falcon memerlukan manifest dari source bersih untuk instalasi remote. Build dari checkout tanpa commit hanyalah pemeriksaan lokal. Publish/upload, instalasi, aktivasi theme, dan perubahan homepage membutuhkan instruksi terpisah.
 
 ## Pemeriksaan yang masih diperlukan
 

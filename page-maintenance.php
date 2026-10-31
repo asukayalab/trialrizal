@@ -12,6 +12,8 @@ else :
         return isset($defs[$key]) && !empty($defs[$key]['public']) && isset($values[$key]) && is_string($values[$key]) ? trim($values[$key]) : '';
     };
     $wa = $field('rm_whatsapp'); $ig = $field('rm_instagram');
+    $hero_title = $field('rm_hero_title');
+    if ($hero_title === '') { $hero_title = get_the_title(); }
 ?>
 <main id="main" class="rm-page">
   <section class="rm-hero" aria-labelledby="rm-title">
@@ -19,7 +21,7 @@ else :
     <div class="rm-dots rm-dots-hero" aria-hidden="true"><i></i><i></i><i></i></div>
     <div class="rm-content">
       <div class="rm-rule"></div>
-      <h1 id="rm-title"><span class="rm-brand-left"><?php echo esc_html(get_the_title()); ?></span><?php if ($field('rm_brand_suffix') !== ''): ?> <span class="rm-brand-right"><?php echo esc_html($field('rm_brand_suffix')); ?></span><?php endif; ?></h1>
+      <h1 id="rm-title"><span class="rm-brand-left"><?php echo esc_html($hero_title); ?></span><?php if ($field('rm_brand_suffix') !== ''): ?> <span class="rm-brand-right"><?php echo esc_html($field('rm_brand_suffix')); ?></span><?php endif; ?></h1>
       <?php if ($field('rm_tagline') !== ''): ?><p class="rm-tagline"><?php echo esc_html($field('rm_tagline')); ?></p><?php endif; ?>
       <ul class="rm-professions"><?php foreach (['rm_profession_1','rm_profession_2','rm_profession_3'] as $key): if ($field($key) !== ''): ?><li><?php echo esc_html($field($key)); ?></li><?php endif; endforeach; ?></ul>
       <div class="rm-actions"><div class="rm-wa"><?php if ($wa !== ''): ?><a class="rm-button" href="<?php echo esc_url($wa, ['https']); ?>" target="_blank" rel="noopener noreferrer">WhatsApp</a><?php endif; ?></div></div>
