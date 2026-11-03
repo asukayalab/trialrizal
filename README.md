@@ -1,39 +1,36 @@
 # Trial Rizal — maintenance Falcon
 
-Child theme untuk Falcon Theme. Source ini tidak mengaktifkan theme, membuat Page, atau mengubah homepage. Ini versi awal yang belum diterima di WordPress hosting. Tampilan berasal dari referensi HTML yang diberikan; email sengaja tidak ditampilkan.
+Child theme `trialrizal` alpha.4, parent `falcon-theme`. Memerlukan FP minimal alpha.22 dan FT minimal alpha.7, keduanya di bawah 0.2.0. Prerelease untuk local/staging; versi dan kesiapan hosting diperiksa terpisah.
 
-## Menyiapkan konten untuk trial
+## Setup dengan blueprint
 
-Di Falcon Content Builder, buat field group untuk **Page**. Buat field berikut secara manual (import schema dari paket belum didukung). Set setiap field sebagai **public**, tidak wajib, dengan default kosong. Jangan mengubah field existing yang memakai key sama tanpa memeriksa kontraknya. Nilai kosong tidak ditampilkan. Field publik dapat dibaca melalui jalur publik Falcon; jangan mengisinya dengan informasi rahasia.
+1. Pasang paket melalui alur Falcon yang kompatibel; preview lalu aktifkan child theme secara eksplisit.
+2. Falcon → Halaman & Desain → Setup website dari paket.
+3. Petakan role `maintenance` ke Page existing bila ada, atau pilih draft baru. Pilih struktur paket jika ingin memakai template Rizal Maintenance.
+4. Review definisi, lalu konfirmasi Apply. Blueprint membawa 13 field publik optional, khusus Page role maintenance. Nilai referensi berasal dari HTML awal dan perlu review pemilik. Default tidak menimpa nilai existing.
+5. Edit Page: periksa hero, tagline, profesi, WhatsApp, pesan coming soon, Instagram, copyright, dan domain. Semua field beserta default ada di `falcon-blueprint.json`. Email tetap belum ditampilkan sesuai versi sebelumnya.
+6. Preview desktop/HP/keyboard, lalu pilih homepage dan publish secara manual. Template meminta noindex tanpa mengubah visibility seluruh situs.
 
-| Key | Jenis | Isi referensi awal untuk trial |
-|---|---|---|
-| `rm_hero_title` | text | Rizal Maulana |
-| `rm_brand_suffix` | text | Engineering |
-| `rm_tagline` | text | Precision in Every Structure |
-| `rm_profession_1` | text | Structural Engineer |
-| `rm_profession_2` | text | Civil Engineering Lecturer |
-| `rm_profession_3` | text | Researcher |
-| `rm_whatsapp` | URL | https://wa.me/628186360014 |
-| `rm_line_1` | text | The full experience is being crafted |
-| `rm_line_2` | text | with the same care as every structure I design. |
-| `rm_launch` | text | Launching Soon |
-| `rm_instagram` | URL | https://www.instagram.com/rizalmaulana13/ |
-| `rm_footer` | text | © 2025 Rizal Maulana Engineering |
-| `rm_domain` | text | rizalmaulana.id |
+Judul Page boleh Maintenance dan slug boleh berbeda; hero menggunakan `rm_hero_title` dengan fallback judul Page, suffix menggunakan `rm_brand_suffix`. Body native tidak dirender template maintenance. SEO title/canonical mengikuti owner WordPress/FT, tidak diturunkan dari hero secara paksa. Tidak ada form pengiriman.
 
-Judul Page dapat tetap `maintenance`, sedangkan teks hero diisi terpisah melalui `rm_hero_title`. Jika field hero belum ada atau kosong, judul Page dipakai sebagai fallback. Pilih named template **Rizal Maintenance**. Data pada tabel merupakan isi referensi yang perlu ditinjau pemilik; bukan otomatis dibuat atau diverifikasi. Falcon memakai classic editor untuk tipe yang memiliki field Falcon. Bila field belum dibuat/diisi, bagian terkait kosong. Email tidak memiliki field atau tombol pada versi ini.
+## Migrasi alpha.3
 
-Untuk beranda, manusia memilih Page tersebut sebagai static homepage di WordPress dan memilih template yang sama. Child `front-page.php` menangani assignment itu; untuk pilihan lain ia meneruskan ke parent Falcon Theme. Review perubahan homepage dan theme di staging terlebih dahulu. Template meminta noindex melalui `wp_robots`.
+Key 13 field `rm_*` dan named template tetap dipertahankan. Sebelum Apply, periksa group manual existing. Jika key sudah dimiliki group lama, pertahankan definisi/nilai existing dan review konflik; jangan membuat group duplikat atau menghapus data untuk memaksa setup. Group existing global yang dipertahankan dapat tetap tampil pada Page lain; pembatasan role baru memerlukan review pengelola. Update ZIP tidak otomatis menjalankan blueprint. Field private/tidak berlaku tidak dirender, melalui helper resmi `FalconTheme\field`.
 
-## Font dan motion
+## Aset dan fallback
 
-Roboto dimuat dari Google Fonts; jika tidak tersedia, browser memakai sans-serif fallback dan tampilan dapat berbeda. Ini memerlukan akses jaringan dari browser dan pemeriksaan privasi/lisensi sebelum distribusi. Builder proyek alpha.19 tidak memaketkan file font atau JS mandiri; motion didaftarkan sebagai inline script melalui WordPress dari file PHP yang terdaftar dalam runtime. Preferensi reduced motion menghentikan animasi. Indikator memakai panah seperti yang terlihat pada referensi browser.
+CSS dan JavaScript di-enqueue melalui WordPress; motion kini `assets/motion.js`, tanpa runtime bundle HTML/React. Reduced motion menonaktifkan gerak saat halaman dimuat; tanpa JavaScript isi tetap terlihat. Roboto masih memakai Google Fonts seperti alpha.3; memerlukan jaringan dan review lisensi/privasi sebelum distribusi. Jika font gagal, gunakan sans-serif. Bila FP/helper tidak tersedia, template hanya memiliki fallback judul dan dekorasi, tanpa mengeluarkan private metadata.
 
 ## Build dan distribusi
 
-Gunakan builder Falcon yang cocok dengan source ini, dengan output di luar source. `project.json` menggunakan project ID dan theme slug `trialrizal`, versi `0.1.0-alpha.3`, parent `falcon-theme`, dan batas kompatibilitas konservatif sesuai baseline. Setelah source di-commit dan bersih, build manifest/ZIP, periksa isi dan unggah keduanya ke GitHub Release dengan tag yang cocok (`v0.1.0-alpha.3`). Falcon memerlukan manifest dari source bersih untuk instalasi remote. Build dari checkout tanpa commit hanyalah pemeriksaan lokal. Publish/upload, instalasi, aktivasi theme, dan perubahan homepage membutuhkan instruksi terpisah.
+Dari checkout core Falcon yang cocok:
 
-## Pemeriksaan yang masih diperlukan
+```sh
+npm run build:project -- --source /absolute/path/trialrizal --output /absolute/path/output
+```
 
-Uji render WordPress lokal, perbandingan browser dengan referensi di desktop dan HP, isi panjang/kosong, validasi link, keyboard, reduced motion, preview dan pengaturan static homepage; lalu uji distribusi release di staging. Jangan menyatakan hasil identik atau pemasangan hosting berhasil sebelum pengujian tersebut selesai.
+Seluruh runtime terdaftar di `project.json`. Output harus di luar source. Build dari source dirty hanya preview lokal, tidak memenuhi provenance release remote. Rilis berikutnya perlu commit bersih, build ulang dan ZIP/manifest yang cocok. Belum ada kit GitHub Actions di repo ini; distribusi masih build/release manual. Pemasangan paket, aktivasi, Apply blueprint dan publish adalah langkah terpisah.
+
+## Validasi
+
+Build resmi memeriksa kontrak paket/blueprint. Uji render WordPress, migrasi group existing, setup idempotent, nilai kosong/panjang, static homepage, noindex, private/password-protected, desktop/HP/keyboard dan distribusi receiver tetap perlu bukti tersendiri. Lihat catatan validasi di luar runtime; jangan menganggap build lulus berarti hosting lulus.

@@ -1,14 +1,36 @@
 {
   "schema": 1,
   "project_id": "trialrizal",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "status": "development",
-  "package": {"id": "trialrizal", "type": "theme", "parent": "falcon-theme"},
+  "package": {
+    "id": "trialrizal",
+    "type": "theme",
+    "parent": "falcon-theme"
+  },
   "min_wp": "6.7",
   "min_php": "8.3",
   "compatibility": {
-    "falcon-theme": {"min": "0.1.0-alpha.6", "max_exclusive": "0.2.0"},
-    "falcon-wf": {"min": "0.1.0-alpha.19", "max_exclusive": "0.2.0", "optional": false}
+    "falcon-theme": {
+      "min": "0.1.0-alpha.7",
+      "max_exclusive": "0.2.0"
+    },
+    "falcon-wf": {
+      "min": "0.1.0-alpha.22",
+      "max_exclusive": "0.2.0",
+      "optional": false
+    }
   },
-  "runtime": ["style.css", "index.php", "functions.php", "front-page.php", "page-maintenance.php", "header-maintenance.php", "footer-maintenance.php", "assets/maintenance.css", "assets/motion.php"]
+  "runtime": [
+    "style.css",
+    "index.php",
+    "functions.php",
+    "front-page.php",
+    "page-maintenance.php",
+    "header-maintenance.php",
+    "footer-maintenance.php",
+    "assets/maintenance.css",
+    "assets/motion.js",
+    "falcon-blueprint.json"
+  ]
 }

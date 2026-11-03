@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "project_id": "trialrizal",
+  "version": "0.1.0-alpha.4",
+  "website": {
+    "name": "Rizal Maulana Engineering",
+    "purpose": "Halaman maintenance dengan identitas profesional dan jalur kontak.",
+    "audience": "Calon klien dan rekan profesional",
+    "language": "en"
+  },
+  "pages": [
+    {
+      "key": "maintenance",
+      "title": "Maintenance",
+      "slug": "maintenance",
+      "template": "page-maintenance.php"
+    }
+  ],
+  "definitions": {
+    "groups": {
+      "rm_maintenance": {
+        "label": "Isi halaman maintenance Rizal",
+        "active": true,
+        "types": [
+          "page"
+        ],
+        "page_roles": [
+          "maintenance"
+        ],
+        "fields": [
+          {
+            "key": "rm_hero_title",
+            "label": "Nama pada hero",
+            "kind": "text",
+            "default": "Rizal Maulana",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_brand_suffix",
+            "label": "Akhiran nama",
+            "kind": "text",
+            "default": "Engineering",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_tagline",
+            "label": "Tagline",
+            "kind": "text",
+            "default": "Precision in Every Structure",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_profession_1",
+            "label": "Profesi 1",
+            "kind": "text",
+            "default": "Structural Engineer",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_profession_2",
+            "label": "Profesi 2",
+            "kind": "text",
+            "default": "Civil Engineering Lecturer",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_profession_3",
+            "label": "Profesi 3",
+            "kind": "text",
+            "default": "Researcher",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_whatsapp",
+            "label": "Tautan WhatsApp",
+            "kind": "url",
+            "default": "https://wa.me/628186360014",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_line_1",
+            "label": "Pesan baris 1",
+            "kind": "text",
+            "default": "The full experience is being crafted",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_line_2",
+            "label": "Pesan baris 2",
+            "kind": "text",
+            "default": "with the same care as every structure I design.",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_launch",
+            "label": "Status peluncuran",
+            "kind": "text",
+            "default": "Launching Soon",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_instagram",
+            "label": "Tautan Instagram",
+            "kind": "url",
+            "default": "https://www.instagram.com/rizalmaulana13/",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_footer",
+            "label": "Copyright",
+            "kind": "text",
+            "default": "© 2025 Rizal Maulana Engineering",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          },
+          {
+            "key": "rm_domain",
+            "label": "Domain tampilan",
+            "kind": "text",
+            "default": "rizalmaulana.id",
+            "public": true,
+            "required": false,
+            "help": "Isi referensi; periksa sebelum publikasi."
+          }
+        ]
+      }
+    }
+  },
+  "instructions": [
+    "Petakan role maintenance ke Page existing bila tersedia; jangan membuat duplikat.",
+    "Review nilai referensi dan kontak sebelum publikasi. Judul Page, slug dan hero terpisah.",
+    "Jika field rm_* sudah ada pada group lama, pertahankan kontrak/nilai existing; jangan membuat key duplikat.",
+    "Pilih homepage, aktivasi theme dan publish secara manual. Halaman maintenance meminta noindex."
+  ]
+}

@@ -1,6 +1,3 @@
-<?php
-if (!defined('ABSPATH')) { exit; }
-return <<<'JS'
 (() => {
   const page = document.querySelector('.rm-page'), section = document.getElementById('coming-soon');
   if (!page || !section || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -30,4 +27,3 @@ return <<<'JS'
   };
   raf=requestAnimationFrame(loop); window.addEventListener('pagehide',()=>cancelAnimationFrame(raf),{once:true});
 })();
-JS;

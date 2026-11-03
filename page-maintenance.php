@@ -6,10 +6,9 @@ if (have_posts()) : the_post();
 if (post_password_required()) :
     echo get_the_password_form();
 else :
-    $defs = class_exists('FalconWF\\Content\\Schema') ? \FalconWF\Content\Schema::custom('page') : [];
-    $values = $defs ? \FalconWF\Content\Schema::values(get_the_ID(), 'page') : [];
-    $field = static function (string $key) use ($defs, $values): string {
-        return isset($defs[$key]) && !empty($defs[$key]['public']) && isset($values[$key]) && is_string($values[$key]) ? trim($values[$key]) : '';
+    $field = static function (string $key): string {
+        $value = function_exists('FalconTheme\\field') ? \FalconTheme\field(get_the_ID(), $key, '') : '';
+        return is_string($value) ? trim($value) : '';
     };
     $wa = $field('rm_whatsapp'); $ig = $field('rm_instagram');
     $hero_title = $field('rm_hero_title');
