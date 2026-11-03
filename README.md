@@ -1,6 +1,6 @@
 # Trial Rizal — maintenance Falcon
 
-Child theme `trialrizal` alpha.4, parent `falcon-theme`. Memerlukan FP minimal alpha.22 dan FT minimal alpha.7, keduanya di bawah 0.2.0. Prerelease untuk local/staging; versi dan kesiapan hosting diperiksa terpisah.
+Child theme `trialrizal` alpha.5, parent `falcon-theme`. Memerlukan FP minimal alpha.22 dan FT minimal alpha.7, keduanya di bawah 0.2.0. Prerelease untuk local/staging; versi dan kesiapan hosting diperiksa terpisah.
 
 ## Setup dengan blueprint
 
@@ -29,7 +29,7 @@ Dari checkout core Falcon yang cocok:
 npm run build:project -- --source /absolute/path/trialrizal --output /absolute/path/output
 ```
 
-Seluruh runtime terdaftar di `project.json`. Output harus di luar source. Build dari source dirty hanya preview lokal, tidak memenuhi provenance release remote. Rilis berikutnya perlu commit bersih, build ulang dan ZIP/manifest yang cocok. Belum ada kit GitHub Actions di repo ini; distribusi masih build/release manual. Pemasangan paket, aktivasi, Apply blueprint dan publish adalah langkah terpisah.
+Seluruh runtime terdaftar di `project.json`. Output harus di luar source. Build dari source dirty hanya preview lokal, tidak memenuhi provenance release remote. Rilis berikutnya perlu commit bersih, build ulang dan ZIP/manifest yang cocok. GitHub Actions kini membuat prerelease otomatis pada push main. Naikkan versi di project.json dan falcon-blueprint.json, tambah release-notes/<versi>.md, commit lalu push. Tidak perlu upload ZIP/manifest manual. Rilis existing tidak ditimpa; perubahan berikutnya memerlukan versi baru. Pemasangan paket, aktivasi, Apply blueprint dan publish adalah langkah terpisah.
 
 ## Validasi
 
